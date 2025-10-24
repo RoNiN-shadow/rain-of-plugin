@@ -1,0 +1,15 @@
+name: BearsPlugin
+version: '1.0-SNAPSHOT'
+main: org.plugins.bearsPlugin.BearsPlugin
+api-version: '1.21'
+
+commands:
+  bear:
+    description: secret
+    usage: /bear
+  day:
+    usage: /day
+  bearrain:
+    usage: /bearrain
+  killbears:
+    usage: /killbears
