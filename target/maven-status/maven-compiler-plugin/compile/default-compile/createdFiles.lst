@@ -1,6 +1,0 @@
-org/plugins/bearsPlugin/commands/KillNearBears.class
-org/plugins/bearsPlugin/BearsPlugin.class
-org/plugins/bearsPlugin/commands/BearCommand.class
-org/plugins/bearsPlugin/commands/BearRainCommand.class
-org/plugins/bearsPlugin/commands/DayCommand.class
-org/plugins/bearsPlugin/commands/BearRainCommand$BearFallDamageHandler.class
