@@ -4,8 +4,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.plugins.bearsPlugin.commands.BearCommand;
 import org.plugins.bearsPlugin.commands.BearRainCommand;
 import org.plugins.bearsPlugin.commands.DayCommand;
-import org.plugins.bearsPlugin.commands.BearRainCommand.BearFallDamageHandler;
 import org.plugins.bearsPlugin.commands.KillNearBears;
+import org.plugins.bearsPlugin.events.BearFallEvent;
 
 public final class BearsPlugin extends JavaPlugin {
 
@@ -16,7 +16,7 @@ public final class BearsPlugin extends JavaPlugin {
         this.getCommand("day").setExecutor(new DayCommand());
         this.getCommand("bearrain").setExecutor(new BearRainCommand(this));
         this.getCommand("killbears").setExecutor(new KillNearBears());
-        getServer().getPluginManager().registerEvents(new BearFallDamageHandler(), this);
+        getServer().getPluginManager().registerEvents(new BearFallEvent(), this);
 
     }
 

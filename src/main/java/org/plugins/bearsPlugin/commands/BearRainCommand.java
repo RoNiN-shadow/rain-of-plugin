@@ -51,35 +51,7 @@ public class BearRainCommand implements CommandExecutor {
             }
         }
         player.sendMessage("Ведмежа операція)");
-        //new BukkitRunnable(){
-        //   @Override
-         //   public void run(){
-        //     for( PolarBear bear : bears) {
-         //          if(player.isOnline()){
-          //             bear.damage(0.001, player);
-           //            bear.heal(1);
-            //       }
-             //  }
-            //}
-        //}.runTaskTimer(plugin,0L, 100L);
 
         return true;
-    }
-    public static class BearFallDamageHandler implements Listener{
-        @EventHandler
-        public void onBearFall(EntityDamageEvent event){
-            if(event.getEntity() instanceof PolarBear && event.getCause() == EntityDamageEvent.DamageCause.FALL){
-               event.setDamage(0);
-            }
-        }
-        @EventHandler
-        public void onPlayerSpawn(PlayerRespawnEvent event){
-            Player player = (Player) event.getPlayer();
-            for(Entity entity : player.getLocation().getNearbyEntities(200, 200, 200)){
-                if(entity instanceof PolarBear bear){
-                    bear.setTarget(player);
-                }
-            }
-        }
     }
 }
