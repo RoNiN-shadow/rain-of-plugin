@@ -37,20 +37,27 @@ public class BearRainCommand implements CommandExecutor {
         World world = player.getWorld();
         List<PolarBear> bears  = new ArrayList<>();
         Random random = new Random();
-        for(int i=-50; i<0;i++){
-            for(int j=-50;j<0;j++){
+
+        int radius = 50;
+        int durationEffect = 20*15;
+        int amplifier = 0;
+        String bearName = "ye yo";
+        String messagePlayer = "Bear operation";
+
+        for(int i=-radius; i<0;i++){
+            for(int j=-radius;j<0;j++){
                 if (random.nextBoolean()){
-                    Location location = player.getLocation().clone().add(i,50, j);
+                    Location location = player.getLocation().clone().add(i,radius, j);
                     PolarBear bear = (PolarBear) world.spawnEntity(location, EntityType.POLAR_BEAR);
-                    bear.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 20*15,0));
-                    bear.setCustomName("єй-йо");
+                    bear.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, durationEffect, amplifier));
+                    bear.setCustomName(bearName);
                     bear.setCustomNameVisible(true);
                     bears.add(bear);
                     bear.setTarget(player);
                 }
             }
         }
-        player.sendMessage("Ведмежа операція)");
+        player.sendMessage(messagePlayer);
 
         return true;
     }

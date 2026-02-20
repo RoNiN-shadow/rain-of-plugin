@@ -12,8 +12,10 @@ public class DayCommand implements CommandExecutor {
             sender.sendMessage("only for players");
             return true;
         }
+
+        int time = 1000;
         Player player = (Player) sender;
-        player.getWorld().setTime(1000);
+        player.getWorld().setTime(time);
         return true;
     }
 }

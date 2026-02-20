@@ -19,7 +19,9 @@ public class KillNearBears implements CommandExecutor {
         Player player = (Player) sender;
         Location location = player.getLocation();
         World world = player.getWorld();
-        for(Entity entity : world.getNearbyEntities(location, 600, 600, 600)){
+
+        int radius = 600;
+        for(Entity entity : world.getNearbyEntities(location, radius, radius, radius)){
             if(entity.getType() == EntityType.POLAR_BEAR){
                 entity.remove();
             }
